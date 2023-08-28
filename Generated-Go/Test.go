@@ -238,10 +238,10 @@ type Visitor struct {
 //func (v *Visitor) VisitErrorNode(_ antlr.ErrorNode) interface{}   { return nil }
 //func (v *Visitor) VisitTerminal(_ antlr.TerminalNode) interface{} { return nil }
 
-    func (v *Visitor) VisitProg(ctx *parser.ProgContext) any {
-        fmt.Println("VisitProg")
-        return v.VisitChildren(ctx)
-    }
+//func (v *Visitor) VisitProg(ctx *parser.ProgContext) any {
+//    fmt.Println("VisitProg")
+//    return v.VisitChildren(ctx)
+//}
 
 func (v *Visitor) VisitDecl(ctx *parser.DeclContext) any {
 	fmt.Println("VisitDecl")
@@ -253,9 +253,9 @@ func (v *Visitor) VisitExpr(ctx *parser.ExprContext) any {
 	return v.VisitChildren(ctx)
 }
 
-//func (v *Visitor) Visit(tree antlr.ParseTree) any {
-//    return tree.Accept(v)
-//}
+func (v *Visitor) Visit(tree antlr.ParseTree) any {
+    return tree.Accept(v)
+}
 
 func (v *Visitor) VisitChildren(tree antlr.RuleNode) any {
     n := tree.GetChildCount()
