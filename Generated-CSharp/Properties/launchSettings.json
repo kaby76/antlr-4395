@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Test": {
+      "commandName": "Project",
+      "commandLineArgs": "test1.txt",
+      "workingDirectory": "c:\\msys64\\home\\Kenne\\issues\\antlr-4395\\Antlr4-Golang-Visitor\\test"
+    }
+  }
+}
